@@ -10,8 +10,11 @@ namespace HealthSystemv3._0
     {
         public Player()
         {
+            name = "Dylan";
             health = 100;
-            
+            lives = 3;
+            shield = 100;
+            remainingshield = shield;
         }
        
     }

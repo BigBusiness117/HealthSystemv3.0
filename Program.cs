@@ -13,9 +13,14 @@ namespace HealthSystemv3._0
             Player player = new Player();
             Enemy enemy = new Enemy();
             Console.WriteLine("HYBEOY");
-            player.ShowStats();
+            player.ShowHub();
             player.TakeDamage(50);
-            player.ShowStats();
+            player.ShowHub();
+            player.Heal(25);
+            player.ShowHub();
+            player.TakeDamage(75);
+            player.ShowHub();
+            enemy.ShowHub();
             Console.ReadKey();
         }
     }
