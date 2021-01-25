@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace HealthSystemv3._0
 {
-    class Program
+    class Enemy
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("HYBEOY");
-
-            Console.ReadKey();
-        }
     }
 }
