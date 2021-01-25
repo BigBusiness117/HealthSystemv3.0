@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace HealthSystemv3._0
 {
-    class Player
+    class Player : Character
     {
+        public Player()
+        {
+            health = 100;
+            
+        }
+       
     }
 }

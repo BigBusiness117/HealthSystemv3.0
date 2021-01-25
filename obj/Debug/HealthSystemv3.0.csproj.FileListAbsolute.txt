@@ -1,0 +1,7 @@
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\bin\Debug\HealthSystemv3.0.exe.config
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\bin\Debug\HealthSystemv3.0.exe
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\bin\Debug\HealthSystemv3.0.pdb
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\obj\Debug\HealthSystemv3.0.csprojAssemblyReference.cache
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\obj\Debug\HealthSystemv3.0.csproj.CoreCompileInputs.cache
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\obj\Debug\HealthSystemv3.0.exe
+C:\Users\High End-PC\source\repos\HealthSystemv3.0\obj\Debug\HealthSystemv3.0.pdb

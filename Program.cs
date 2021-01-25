@@ -10,8 +10,12 @@ namespace HealthSystemv3._0
     {
         static void Main(string[] args)
         {
+            Player player = new Player();
+            Enemy enemy = new Enemy();
             Console.WriteLine("HYBEOY");
-
+            player.ShowStats();
+            player.TakeDamage(50);
+            player.ShowStats();
             Console.ReadKey();
         }
     }

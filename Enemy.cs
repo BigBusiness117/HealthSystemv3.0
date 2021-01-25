@@ -8,5 +8,9 @@ namespace HealthSystemv3._0
 {
     class Enemy
     {
+       public Enemy()
+        {
+
+        }
     }
 }
