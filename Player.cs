@@ -15,6 +15,7 @@ namespace HealthSystemv3._0
             lives = 3;
             shield = 100;
             remainingshield = shield;
+
         }
        
     }
