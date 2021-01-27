@@ -21,6 +21,8 @@ namespace HealthSystemv3._0
             player.TakeDamage(75);
             player.ShowHub();
             enemy.ShowHub();
+            player.itemboost(0);
+            player.ShowHub();
             Console.ReadKey();
         }
     }

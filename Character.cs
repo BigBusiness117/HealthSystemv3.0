@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HealthSystemv3._0
 {
-    abstract class Character
+    abstract class Character : Items
     {
         public int remainingshield;
         public int shield;
@@ -18,6 +18,18 @@ namespace HealthSystemv3._0
         public int currentWeapon;
         public string weaponNames;
         public string name = "";
+
+        Items items = new Items();
+        public void itemboost(int food)
+        {
+            items.healups[food] = items.healups[food];
+            if(food == 0)
+            {
+                health = health + 30;
+                Console.WriteLine("you ate an apple and gained 30 health");
+            } 
+
+        }
         public void TakeDamage(int damage)
         {
 
@@ -79,7 +91,7 @@ namespace HealthSystemv3._0
             Console.WriteLine(" press any key to move on");
             // Console.ReadKey(true);
         }
-        public void HealthRegain()
+        private void HealthRegain()
         {
             if (health < 0)
             {
@@ -103,7 +115,7 @@ namespace HealthSystemv3._0
                 shield = 100;
             }
         }
-        public void LivesRestock()
+        private void LivesRestock()
         {
             if (lives <= 0)
             {
