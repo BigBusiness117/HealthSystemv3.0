@@ -6,30 +6,70 @@ using System.Threading.Tasks;
 
 namespace HealthSystemv3._0
 {
+    // abstract can never be instantiated
     abstract class Character : Items
     {
-        public int remainingshield;
-        public int shield;
-        public int health;
-        public int level;
-        public int lives;
-        public int stamina;
-        public int weapon;
-        public int currentWeapon;
-        public string weaponNames;
-        public string name = "";
+        // only can be access by the character and what other class is inheritanted
+        protected int remainingshield;
+        protected int shield;
+        protected int health;
+        protected int lives;
+        protected string name = "";
 
-        Items items = new Items();
-        public void itemboost(int food)
+        // overides  the field in item class
+        // public can be access by any class
+        public override void itemboost(int food)
         {
-            items.healups[food] = items.healups[food];
+            // show all the contents in itemboost field plus its own content
+            base.itemboost(food);
             if(food == 0)
             {
                 health = health + 30;
-                Console.WriteLine("you ate an apple and gained 30 health");
-            } 
+                if (health > 100)
+                {
+                    health = 100;
+                    Console.WriteLine(" health cant go past 100");
+                }
+            }
+            if (food == 1)
+            {
+                health = health + 40;
+                if (health > 100)
+                {
+                    health = 100;
+                    Console.WriteLine(" health cant go past 100");
+                }
+            }
+            if (food == 2)
+            {
+                health = health + 50;
+                if (health > 100)
+                {
+                    health = 100;
+                    Console.WriteLine(" health cant go past 100");
+                }
+            }
+            if (food == 3)
+            {
+                health = health + 60;
+                if (health > 100)
+                {
+                    health = 100;
+                    Console.WriteLine(" health cant go past 100");
+                }
+            }
+            if (food == 4)
+            {
+                health = health + 70;
+                if (health > 100)
+                {
+                    health = 100;
+                    Console.WriteLine(" health cant go past 100");
+                }
+            }
 
         }
+        // take damge to the player and enemy and shows error checking
         public void TakeDamage(int damage)
         {
 
@@ -42,6 +82,7 @@ namespace HealthSystemv3._0
             }
             if (shield > 0)
             {
+                // damage  spillover from shield to health
                 shield -= damage;
                 remainingshield -= damage;
             }
@@ -52,13 +93,16 @@ namespace HealthSystemv3._0
             }
             if (shield < 0)
             {
+
                 shield = 0;
                 health += remainingshield;
                 remainingshield = 0;
             }
+
             HealthRegain();
             LivesRestock();
         }
+        //  heal the player and enemy and range checking
         public void Heal(int hp)
         {
             Console.WriteLine(" You are about to take " + hp + " of healing");
@@ -77,20 +121,19 @@ namespace HealthSystemv3._0
                 Console.WriteLine(" health cant go past 100");
             }
         }
-        public void Energy(int energy)
-        {
-            stamina -= energy;
-        }
+        // show the stats of the player and enemy
         public void ShowHub()
         {
-            Console.WriteLine();
-            Console.WriteLine("------------------------------------------------------------------------");
-            Console.WriteLine( " Name: " + name + " |Level: " + level + " |Shield: " + shield + " |Health: " + health + "%" + "| + Lives: " + lives + "| Stamina: " + stamina);
-            Console.WriteLine("------------------------------------------------------------------------");
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine( " Name: " + name + " |Shield: " + shield + " |Health: " + health + "%" + "| + Lives: " + lives);
+            Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine(" press any key to move on");
-            // Console.ReadKey(true);
+            
+            Console.ReadKey(true);
         }
+        // shows health checking
+        //private can only be access in this class
         private void HealthRegain()
         {
             if (health < 0)
@@ -115,6 +158,7 @@ namespace HealthSystemv3._0
                 shield = 100;
             }
         }
+        // show lives checking and replace the lifes when needed
         private void LivesRestock()
         {
             if (lives <= 0)
@@ -122,7 +166,6 @@ namespace HealthSystemv3._0
                 lives = 0;
                 shield = 0;
                 health = 0;
-                stamina = 0;
             }
             if (lives >= 99)
             {
@@ -142,6 +185,7 @@ namespace HealthSystemv3._0
 
 
         }
+        // regenerates shield to the player and enemy
         public void Regenerateshields(int Armor)
         {
             Console.WriteLine(" you are about to take " + Armor + " of Shield regeneration");
@@ -161,6 +205,16 @@ namespace HealthSystemv3._0
                 Console.WriteLine(" shields can't go past 100");
                 shield = 100;
             }
+
+        }
+        // resets the player stats and enemy
+        public void GameReset()
+        {
+            health = 100;
+            shield = 100;
+            remainingshield = shield;
+            lives = 3;
+            Console.WriteLine(" Game has reset");
         }
     }
 }
